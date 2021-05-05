@@ -10,12 +10,21 @@ using System.Windows.Forms;
 
 namespace WorkShop4
 {
-    public partial class Form1 : Form
+    public partial class TravelExperts : Form
     {
-        public Form1()
+        public TravelExperts()
         {
             InitializeComponent();
         }
 
+        private void exitBtn_Click(object sender, EventArgs e)
+        {
+            Application.Exit();  
+        }
+
+        private void instructionLbl_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
