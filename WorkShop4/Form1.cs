@@ -14,11 +14,7 @@ namespace WorkShop4
 {
     public partial class TravelExperts : Form
     {
-        TravelExperts context;
-
-        Package currentPackage;
-
-        public bool viewpackage = false;
+        TravelExpertsContext context;
 
         public TravelExperts()
         {
@@ -37,13 +33,8 @@ namespace WorkShop4
 
         private void packagesBtn_Click(object sender, EventArgs e)
         {
-
-            viewpackage = true;
-            //TravelExperts addpackage = new TravelExperts();
             PackagesFrm addpackage = new PackagesFrm();
-            addpackage.viewpackage = viewpackage;
             addpackage.ShowDialog();
-
         }
 
         

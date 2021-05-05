@@ -13,7 +13,7 @@ namespace WorkShop4
 {
     public partial class PackagesFrm : Form
     {
-        TravelExpertsContext context = new TravelExpertsContext();
+        TravelExpertsContext context;
 
         public Package currentPackage { get; set; }
 
@@ -33,9 +33,6 @@ namespace WorkShop4
 
         private void PackagesFrm_Load(object sender, EventArgs e)
         {
-            //  context = new TravelExpertsContext();
-            //  dataGridpakage.AutoGenerateColumns = true;
-            //  dataGridpakage.DataSource = context.Packages.ToList();
             Display();
         }
 
