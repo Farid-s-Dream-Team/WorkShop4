@@ -46,6 +46,7 @@ namespace WorkShop4
             this.packagesBtn.TabIndex = 1;
             this.packagesBtn.Text = "Packages";
             this.packagesBtn.UseVisualStyleBackColor = true;
+            this.packagesBtn.Click += new System.EventHandler(this.packagesBtn_Click);
             // 
             // productsBtn
             // 
