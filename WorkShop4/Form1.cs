@@ -14,7 +14,9 @@ namespace WorkShop4
 {
     public partial class TravelExperts : Form
     {
-        TravelExpertsContext context;
+        TravelExperts context;
+
+        public bool viewpackage = false;
 
         public TravelExperts()
         {
