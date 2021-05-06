@@ -16,8 +16,6 @@ namespace WorkShop4
     {
         TravelExperts context;
 
-        Package currentPackage;
-
         public bool viewpackage = false;
 
         public TravelExperts()
@@ -37,13 +35,8 @@ namespace WorkShop4
 
         private void packagesBtn_Click(object sender, EventArgs e)
         {
-
-            viewpackage = true;
-            //TravelExperts addpackage = new TravelExperts();
             PackagesFrm addpackage = new PackagesFrm();
-            addpackage.viewpackage = viewpackage;
             addpackage.ShowDialog();
-
         }
 
         

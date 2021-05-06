@@ -13,35 +13,72 @@ namespace WorkShop4
 {
     public partial class PackagesFrm : Form
     {
-        TravelExpertsContext context = new TravelExpertsContext();
+        TravelExpertsContext context;
+        Package currentPackage;
 
-        public Package currentPackage { get; set; }
+        public bool buttonstattadd = false;
 
-        public bool viewpackage { get; set; }
+        public bool viewpackage = false;
 
         public PackagesFrm()
         {
             InitializeComponent();
         }
 
-        public void Display()
+        private void Display()
         {
             context = new TravelExpertsContext();
             dataGridpakage.AutoGenerateColumns = true;
             dataGridpakage.DataSource = context.Packages.ToList();
         }
 
-        private void PackagesFrm_Load(object sender, EventArgs e)
+        public void PackagesFrm_Load(object sender, EventArgs e)
         {
-            //  context = new TravelExpertsContext();
-            //  dataGridpakage.AutoGenerateColumns = true;
-            //  dataGridpakage.DataSource = context.Packages.ToList();
             Display();
         }
 
         private void dataGridpakage_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
 
+        }
+
+        private void addBtn_Click(object sender, EventArgs e)
+        {
+            AddPackagesfrm addPackage = new AddPackagesfrm();
+            addPackage.viewpackage = viewpackage;
+            addPackage.ShowDialog();
+            Display();
+        }
+
+        private Package package = null;
+        private void modifyBtn_Click(object sender, EventArgs e)
+        {
+            AddPackagesfrm addpackage = new AddPackagesfrm();
+            addpackage.currentPackage = currentPackage;
+         //   addpackage.buttonstattadd = false;
+            addpackage.ShowDialog();
+            context.SaveChanges();
+            Display();
+        }
+
+        private void dataGridpakage_SelectionChanged(object sender, EventArgs e)
+        {
+            if (dataGridpakage.SelectedRows.Count > 0)
+            {
+                currentPackage = (Package)dataGridpakage.SelectedRows[0].DataBoundItem;
+            }
+        }
+
+        private void RemoveBtn_Click(object sender, EventArgs e)
+        {
+            context.Packages.Remove(currentPackage);
+            context.SaveChanges();
+            Display();
+        }
+
+        private void ExitBtn_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }
