@@ -39,6 +39,10 @@ namespace WorkShop4
             addpackage.ShowDialog();
         }
 
-        
+        private void pack_prod_suppBtn_Click(object sender, EventArgs e)
+        {
+            PackProSuppMAIN newPackProSupp = new PackProSuppMAIN();
+            newPackProSupp.ShowDialog();
+        }
     }
 }

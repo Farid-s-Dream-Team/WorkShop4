@@ -44,8 +44,9 @@ namespace WorkShop4
 
         private void addBtn_Click(object sender, EventArgs e)
         {
-            AddPackagesfrm addPackage = new AddPackagesfrm();
-            addPackage.viewpackage = viewpackage;
+            AddPackages addPackage = new AddPackages();  //trying out the other form
+            //AddPackagesfrm addPackage = new AddPackagesfrm();
+            addPackage.currentPackage = currentPackage;
             addPackage.ShowDialog();
             Display();
         }
@@ -53,10 +54,11 @@ namespace WorkShop4
         private Package package = null;
         private void modifyBtn_Click(object sender, EventArgs e)
         {
-            AddPackagesfrm addpackage = new AddPackagesfrm();
-            addpackage.currentPackage = currentPackage;
-         //   addpackage.buttonstattadd = false;
-            addpackage.ShowDialog();
+            AddPackages addPackage = new AddPackages(); //trying out the other form
+            //AddPackagesfrm addpackage = new AddPackagesfrm();
+            addPackage.currentPackage = currentPackage;
+            //   addpackage.buttonstattadd = false;
+            addPackage.ShowDialog();
             context.SaveChanges();
             Display();
         }

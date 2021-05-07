@@ -14,6 +14,8 @@ namespace WorkShop4
     public partial class AddPackages : Form
     {
         public Package currentPackage { get; set; }
+        
+
         TravelExpertsContext context = new TravelExpertsContext();
         public bool buttonStatusAdd { get; set; }
 
@@ -91,5 +93,7 @@ namespace WorkShop4
         {
             Close();
         }
+
+
     }
 }

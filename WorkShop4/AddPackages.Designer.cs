@@ -43,7 +43,7 @@ namespace WorkShop4
             this.label1 = new System.Windows.Forms.Label();
             this.commissionTxt = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
-            this.saveBtn = new System.Windows.Forms.Button();
+            this.okBtn = new System.Windows.Forms.Button();
             this.goBackbtn = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
@@ -159,14 +159,14 @@ namespace WorkShop4
             this.label2.TabIndex = 12;
             this.label2.Text = "Commission :";
             // 
-            // saveBtn
+            // okBtn
             // 
-            this.saveBtn.Location = new System.Drawing.Point(169, 392);
-            this.saveBtn.Name = "saveBtn";
-            this.saveBtn.Size = new System.Drawing.Size(108, 23);
-            this.saveBtn.TabIndex = 14;
-            this.saveBtn.Text = "&Save";
-            this.saveBtn.UseVisualStyleBackColor = true;
+            this.okBtn.Location = new System.Drawing.Point(169, 392);
+            this.okBtn.Name = "okBtn";
+            this.okBtn.Size = new System.Drawing.Size(108, 23);
+            this.okBtn.TabIndex = 14;
+            this.okBtn.Text = "&OK";
+            this.okBtn.UseVisualStyleBackColor = true;
             // 
             // goBackbtn
             // 
@@ -184,7 +184,7 @@ namespace WorkShop4
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(713, 450);
             this.Controls.Add(this.goBackbtn);
-            this.Controls.Add(this.saveBtn);
+            this.Controls.Add(this.okBtn);
             this.Controls.Add(this.commissionTxt);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.basePriceTxt);
@@ -223,7 +223,7 @@ namespace WorkShop4
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox commissionTxt;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Button saveBtn;
+        private System.Windows.Forms.Button okBtn;
         private System.Windows.Forms.Button goBackbtn;
     }
 }
