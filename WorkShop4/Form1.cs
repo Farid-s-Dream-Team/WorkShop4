@@ -39,6 +39,10 @@ namespace WorkShop4
             addpackage.ShowDialog();
         }
 
-        
+        private void productsBtn_Click(object sender, EventArgs e)
+        {
+            ProductFrm addproduct = new ProductFrm();
+            addproduct.ShowDialog();
+        }
     }
 }

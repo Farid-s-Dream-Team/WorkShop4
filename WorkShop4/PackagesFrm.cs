@@ -14,6 +14,7 @@ namespace WorkShop4
     public partial class PackagesFrm : Form
     {
         TravelExpertsContext context;
+
         Package currentPackage;
 
         public bool buttonstattadd = false;
@@ -34,7 +35,11 @@ namespace WorkShop4
 
         public void PackagesFrm_Load(object sender, EventArgs e)
         {
+            context = new TravelExpertsContext();
+            dataGridpakage.AutoGenerateColumns = true;
+            dataGridpakage.DataSource = context.Packages.ToList();
             Display();
+            
         }
 
         private void dataGridpakage_CellContentClick(object sender, DataGridViewCellEventArgs e)
@@ -44,8 +49,9 @@ namespace WorkShop4
 
         private void addBtn_Click(object sender, EventArgs e)
         {
+            buttonstattadd = true;
             AddPackagesfrm addPackage = new AddPackagesfrm();
-            addPackage.viewpackage = viewpackage;
+            addPackage.buttonstatadd = buttonstattadd;
             addPackage.ShowDialog();
             Display();
         }
@@ -53,10 +59,11 @@ namespace WorkShop4
         private Package package = null;
         private void modifyBtn_Click(object sender, EventArgs e)
         {
-            AddPackagesfrm addpackage = new AddPackagesfrm();
-            addpackage.currentPackage = currentPackage;
-         //   addpackage.buttonstattadd = false;
-            addpackage.ShowDialog();
+            // AddPackagesfrm addPackage = new AddPackagesfrm();
+            PackagesFrm addPackage = new PackagesFrm();
+            addPackage.currentPackage = currentPackage;
+            addPackage.buttonstattadd = false;
+            addPackage.ShowDialog();
             context.SaveChanges();
             Display();
         }

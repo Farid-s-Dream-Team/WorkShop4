@@ -161,6 +161,7 @@ namespace WorkShop4
             this.cancelBtn.TabIndex = 8;
             this.cancelBtn.Text = "&Cancel";
             this.cancelBtn.UseVisualStyleBackColor = true;
+            this.cancelBtn.Click += new System.EventHandler(this.cancelBtn_Click);
             // 
             // packagebasepriceTxt
             // 

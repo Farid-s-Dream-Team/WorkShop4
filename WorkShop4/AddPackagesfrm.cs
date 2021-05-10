@@ -42,21 +42,22 @@ namespace WorkShop4
                 descriptionTxt.Text = " ";
                 packagebasepriceTxt.Text = " ";
                 commissionTxt.Text = " ";
+
             }
 
-            //else
-            //{
-            //    IDtxt.Enabled = false;
-            //    nameTxt.Text = currentPackage.PkgName;
-            //    startDateTxt.Text = currentPackage.PkgStartDate.ToString();
-            //    endDateTxt.Text = currentPackage.PkgEndDate.ToString();
-            //    descriptionTxt.Text = currentPackage.PkgDesc;
-            //    packagebasepriceTxt.Text = currentPackage.PkgBasePrice.ToString();
-            //    commissionTxt.Text = currentPackage.PkgAgencyCommission.ToString();
+            else
+            {
+                IDtxt.Enabled = false;
+                nameTxt.Text = currentPackage.PkgName;
+                startDateTxt.Text = currentPackage.PkgStartDate.ToString();
+                endDateTxt.Text = currentPackage.PkgEndDate.ToString();
+                descriptionTxt.Text = currentPackage.PkgDesc;
+                packagebasepriceTxt.Text = currentPackage.PkgBasePrice.ToString();
+                commissionTxt.Text = currentPackage.PkgAgencyCommission.ToString();
 
-            //}
-                           
-            
+            }
+
+
         }
 
         private void saveBtn_Click(object sender, EventArgs e)
@@ -64,7 +65,7 @@ namespace WorkShop4
 
             package = new Package();
 
-          //  package.PackageId = Convert.ToInt32(IDtxt.Text);
+            //package.PackageId = Convert.ToInt32(IDtxt.Text);
             package.PkgName = nameTxt.Text;
             package.PkgStartDate = Convert.ToDateTime(startDateTxt.Text);
             package.PkgEndDate = Convert.ToDateTime(endDateTxt.Text);
@@ -82,6 +83,11 @@ namespace WorkShop4
             MessageBox.Show("Record Inserted Succefully");
             this.Close();
 
+        }
+
+        private void cancelBtn_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }
