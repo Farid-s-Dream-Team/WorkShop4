@@ -40,9 +40,10 @@ namespace WorkShop4
             // 
             // packagesBtn
             // 
-            this.packagesBtn.Location = new System.Drawing.Point(319, 78);
+            this.packagesBtn.Location = new System.Drawing.Point(365, 104);
+            this.packagesBtn.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.packagesBtn.Name = "packagesBtn";
-            this.packagesBtn.Size = new System.Drawing.Size(126, 40);
+            this.packagesBtn.Size = new System.Drawing.Size(144, 53);
             this.packagesBtn.TabIndex = 1;
             this.packagesBtn.Text = "Packages";
             this.packagesBtn.UseVisualStyleBackColor = true;
@@ -50,36 +51,41 @@ namespace WorkShop4
             // 
             // productsBtn
             // 
-            this.productsBtn.Location = new System.Drawing.Point(319, 143);
+            this.productsBtn.Location = new System.Drawing.Point(365, 191);
+            this.productsBtn.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.productsBtn.Name = "productsBtn";
-            this.productsBtn.Size = new System.Drawing.Size(126, 40);
+            this.productsBtn.Size = new System.Drawing.Size(144, 53);
             this.productsBtn.TabIndex = 2;
             this.productsBtn.Text = "Products";
             this.productsBtn.UseVisualStyleBackColor = true;
             // 
             // products_suppliersBtn
             // 
-            this.products_suppliersBtn.Location = new System.Drawing.Point(319, 201);
+            this.products_suppliersBtn.Location = new System.Drawing.Point(365, 268);
+            this.products_suppliersBtn.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.products_suppliersBtn.Name = "products_suppliersBtn";
-            this.products_suppliersBtn.Size = new System.Drawing.Size(126, 40);
+            this.products_suppliersBtn.Size = new System.Drawing.Size(144, 53);
             this.products_suppliersBtn.TabIndex = 3;
             this.products_suppliersBtn.Text = " Products Suppliers";
             this.products_suppliersBtn.UseVisualStyleBackColor = true;
+            this.products_suppliersBtn.Click += new System.EventHandler(this.products_suppliersBtn_Click);
             // 
             // suppliersBtn
             // 
-            this.suppliersBtn.Location = new System.Drawing.Point(319, 257);
+            this.suppliersBtn.Location = new System.Drawing.Point(365, 343);
+            this.suppliersBtn.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.suppliersBtn.Name = "suppliersBtn";
-            this.suppliersBtn.Size = new System.Drawing.Size(126, 40);
+            this.suppliersBtn.Size = new System.Drawing.Size(144, 53);
             this.suppliersBtn.TabIndex = 4;
             this.suppliersBtn.Text = "Suppliers";
             this.suppliersBtn.UseVisualStyleBackColor = true;
             // 
             // pack_prod_suppBtn
             // 
-            this.pack_prod_suppBtn.Location = new System.Drawing.Point(319, 313);
+            this.pack_prod_suppBtn.Location = new System.Drawing.Point(365, 417);
+            this.pack_prod_suppBtn.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.pack_prod_suppBtn.Name = "pack_prod_suppBtn";
-            this.pack_prod_suppBtn.Size = new System.Drawing.Size(126, 40);
+            this.pack_prod_suppBtn.Size = new System.Drawing.Size(144, 53);
             this.pack_prod_suppBtn.TabIndex = 5;
             this.pack_prod_suppBtn.Text = "Packates Products Suppliers";
             this.pack_prod_suppBtn.UseVisualStyleBackColor = true;
@@ -87,9 +93,10 @@ namespace WorkShop4
             // exitBtn
             // 
             this.exitBtn.BackColor = System.Drawing.Color.Red;
-            this.exitBtn.Location = new System.Drawing.Point(319, 379);
+            this.exitBtn.Location = new System.Drawing.Point(365, 505);
+            this.exitBtn.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.exitBtn.Name = "exitBtn";
-            this.exitBtn.Size = new System.Drawing.Size(126, 43);
+            this.exitBtn.Size = new System.Drawing.Size(144, 57);
             this.exitBtn.TabIndex = 6;
             this.exitBtn.Text = "&Exit";
             this.exitBtn.UseVisualStyleBackColor = false;
@@ -98,9 +105,9 @@ namespace WorkShop4
             // instructionLbl
             // 
             this.instructionLbl.AutoSize = true;
-            this.instructionLbl.Location = new System.Drawing.Point(82, 78);
+            this.instructionLbl.Location = new System.Drawing.Point(94, 104);
             this.instructionLbl.Name = "instructionLbl";
-            this.instructionLbl.Size = new System.Drawing.Size(162, 15);
+            this.instructionLbl.Size = new System.Drawing.Size(205, 20);
             this.instructionLbl.TabIndex = 7;
             this.instructionLbl.Text = "Choose A Database to Access";
             this.instructionLbl.Click += new System.EventHandler(this.instructionLbl_Click);
@@ -108,9 +115,9 @@ namespace WorkShop4
             // TravelExperts
             // 
             this.AccessibleRole = System.Windows.Forms.AccessibleRole.None;
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(535, 450);
+            this.ClientSize = new System.Drawing.Size(611, 600);
             this.Controls.Add(this.instructionLbl);
             this.Controls.Add(this.exitBtn);
             this.Controls.Add(this.pack_prod_suppBtn);
@@ -118,6 +125,7 @@ namespace WorkShop4
             this.Controls.Add(this.products_suppliersBtn);
             this.Controls.Add(this.productsBtn);
             this.Controls.Add(this.packagesBtn);
+            this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.Name = "TravelExperts";
             this.Text = "Travel Experts";
             this.ResumeLayout(false);
