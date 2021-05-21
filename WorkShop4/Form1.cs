@@ -39,6 +39,10 @@ namespace WorkShop4
             addpackage.ShowDialog();
         }
 
-        
+        private void suppliersBtn_Click(object sender, EventArgs e)
+        {
+            SupplierFrm SupliersData = new SupplierFrm();
+            SupliersData.ShowDialog();
+        }
     }
 }
