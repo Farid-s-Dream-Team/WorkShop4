@@ -13,7 +13,7 @@ namespace WorkShop4
 {
     public partial class AddPackagesfrm : Form
     {
-        TravelExpertsContext context = new TravelExpertsContext();
+        public TravelExpertsContext context { get; set; }
 
         public Package currentPackage { get; set; }
                 
@@ -63,22 +63,22 @@ namespace WorkShop4
         private void saveBtn_Click(object sender, EventArgs e)
         {
 
-            package = new Package();
+            // package = new Package();
 
             //package.PackageId = Convert.ToInt32(IDtxt.Text);
-            package.PkgName = nameTxt.Text;
-            package.PkgStartDate = Convert.ToDateTime(startDateTxt.Text);
-            package.PkgEndDate = Convert.ToDateTime(endDateTxt.Text);
-            package.PkgDesc = descriptionTxt.Text;
-            package.PkgBasePrice = Convert.ToDecimal(packagebasepriceTxt.Text);
-            package.PkgAgencyCommission = Convert.ToDecimal(commissionTxt.Text);
+            currentPackage.PkgName = nameTxt.Text;
+            currentPackage.PkgStartDate = Convert.ToDateTime(startDateTxt.Text);
+            currentPackage.PkgEndDate = Convert.ToDateTime(endDateTxt.Text);
+            currentPackage.PkgDesc = descriptionTxt.Text;
+            currentPackage.PkgBasePrice = Convert.ToDecimal(packagebasepriceTxt.Text);
+            currentPackage.PkgAgencyCommission = Convert.ToDecimal(commissionTxt.Text);
 
             if (buttonstatadd == true)
 
                 context.Packages.Add(package);
 
             else
-                context.Packages.Update(package);
+            //    context.Packages.Update(package);
             context.SaveChanges();
             MessageBox.Show("Record Inserted Succefully");
             this.Close();

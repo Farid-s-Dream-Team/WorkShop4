@@ -17,9 +17,9 @@ namespace WorkShop4
 
         Product currentProduct;
 
-        public bool buttonstatusadd = false;
+        public bool buttonclickadd = false;
 
-        public bool viewpackage = false;
+        //public bool viewpackage = false;
 
         public ProductFrm()
         {
@@ -43,13 +43,15 @@ namespace WorkShop4
             if (dataGridproduct.SelectedRows.Count > 0)
             {
                 currentProduct = (Product)dataGridproduct.SelectedRows[0].DataBoundItem;
+                int index = dataGridproduct.SelectedCells[0].RowIndex;
+                int ProductID = (int)dataGridproduct.Rows[index].Cells[0].Value;
             }
         }
 
         private void ProductFrm_Load(object sender, EventArgs e)
         {
             context = new TravelExpertsContext();
-            dataGridproduct.AutoGenerateColumns = true;
+            dataGridproduct.AutoGenerateColumns = false;
             dataGridproduct.DataSource = context.Products.ToList();
             Display();
         }
@@ -58,10 +60,10 @@ namespace WorkShop4
 
         private void addBtn_Click(object sender, EventArgs e)
         {
-            buttonstatusadd = true;
+            buttonclickadd = true;
 
             AddProductfrm addProduct = new AddProductfrm();
-            addProduct.buttonstatusadd = buttonstatusadd;
+            addProduct.buttonstatusadd = buttonclickadd;
             addProduct.ShowDialog();
             Display();
         }
@@ -80,12 +82,14 @@ namespace WorkShop4
 
         private void modifyBtn_Click(object sender, EventArgs e)
         {
-            //AddProductfrm addProduct = new AddProductfrm();
-            ProductFrm addProduct = new ProductFrm();
+            AddProductfrm addProduct = new AddProductfrm();
+            // ProductFrm addProduct = new ProductFrm();
+            addProduct.context = context;
+            
             addProduct.currentProduct = currentProduct;
             addProduct.buttonstatusadd = false;
             addProduct.ShowDialog();
-            context.SaveChanges();
+          //  context.SaveChanges();
             Display();
         }
     }

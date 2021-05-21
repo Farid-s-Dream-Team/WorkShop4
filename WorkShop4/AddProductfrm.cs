@@ -14,8 +14,8 @@ namespace WorkShop4
     public partial class AddProductfrm : Form
 
     {
-        TravelExpertsContext context = new TravelExpertsContext();
-
+        public TravelExpertsContext context { get; set; }
+       
         public Product currentProduct { get; set; }
 
         public bool buttonstatusadd { get; set; }
@@ -44,16 +44,17 @@ namespace WorkShop4
 
         private void saveBtn_Click(object sender, EventArgs e)
         {
-            product = new Product();
+            // product = new Product();
 
-         //product.ProductId = Convert.ToInt32(IDtxt.Text);
-            product.ProdName = productnameTxt.Text;
+          //  currentProduct.ProductId = Convert.ToInt32(IDtxt.Text);
+            currentProduct.ProdName = productnameTxt.Text;
 
             if (buttonstatusadd == true)
                 context.Products.Add(product);
 
             else
-                context.Products.Update(product);
+
+            //    context.Products.Update(product);
             context.SaveChanges();
             MessageBox.Show("Record Inserted Succefully");
             this.Close();

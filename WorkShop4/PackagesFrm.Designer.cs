@@ -61,7 +61,7 @@ namespace WorkShop4
             // 
             // modifyBtn
             // 
-            this.modifyBtn.Location = new System.Drawing.Point(188, 291);
+            this.modifyBtn.Location = new System.Drawing.Point(196, 291);
             this.modifyBtn.Name = "modifyBtn";
             this.modifyBtn.Size = new System.Drawing.Size(75, 23);
             this.modifyBtn.TabIndex = 1;

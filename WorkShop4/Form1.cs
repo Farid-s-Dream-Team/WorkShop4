@@ -44,5 +44,11 @@ namespace WorkShop4
             ProductFrm addproduct = new ProductFrm();
             addproduct.ShowDialog();
         }
+
+        private void pack_prod_suppBtn_Click(object sender, EventArgs e)
+        {
+            PackageProductSupplierFrm addPPS = new PackageProductSupplierFrm();
+            addPPS.ShowDialog();
+        }
     }
 }
