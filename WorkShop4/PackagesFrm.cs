@@ -19,8 +19,6 @@ namespace WorkShop4
 
         public bool buttonstatadd = false;
 
-        public bool viewpackage = false;
-
         public PackagesFrm()
         {
             InitializeComponent();
@@ -42,9 +40,19 @@ namespace WorkShop4
             
         }
 
+        private Package package = null;
+        
         private void dataGridpakage_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
 
+        }
+
+        private void dataGridpakage_SelectionChanged(object sender, EventArgs e)
+        {
+            if (dataGridpakage.SelectedRows.Count > 0)
+            {
+                currentPackage = (Package)dataGridpakage.SelectedRows[0].DataBoundItem;
+            }
         }
 
         private void addBtn_Click(object sender, EventArgs e)
@@ -56,27 +64,19 @@ namespace WorkShop4
             Display();
         }
 
-        private Package package = null;
+
         private void modifyBtn_Click(object sender, EventArgs e)
         {
             AddPackagesfrm addPackage = new AddPackagesfrm();
             //PackagesFrm addPackage = new PackagesFrm();
 
-            addPackage.context = context;
             addPackage.currentPackage = currentPackage;
             addPackage.buttonstatadd = false;
             addPackage.ShowDialog();
-            context.SaveChanges();
+            //context.SaveChanges();
             Display();
         }
 
-        private void dataGridpakage_SelectionChanged(object sender, EventArgs e)
-        {
-            if (dataGridpakage.SelectedRows.Count > 0)
-            {
-                currentPackage = (Package)dataGridpakage.SelectedRows[0].DataBoundItem;
-            }
-        }
 
         private void RemoveBtn_Click(object sender, EventArgs e)
         {

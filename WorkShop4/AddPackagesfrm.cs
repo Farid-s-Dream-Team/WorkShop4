@@ -13,12 +13,11 @@ namespace WorkShop4
 {
     public partial class AddPackagesfrm : Form
     {
-        public TravelExpertsContext context { get; set; }
+        TravelExpertsContext context = new TravelExpertsContext();
 
         public Package currentPackage { get; set; }
+        private Package package = null;
                 
-        public bool viewpackage = false;
-
         public bool buttonstatadd { get; set; }
 
         public AddPackagesfrm()
@@ -26,16 +25,16 @@ namespace WorkShop4
             InitializeComponent();
         }
 
-        private Package package = null;
 
         private void AddPackagesfrm_Load(object sender, EventArgs e)
 
         {
             //package = new Package();
 
-            if (buttonstatadd == true)
+            if (buttonstatadd == true) //user clicked Add
             {
-                IDtxt.Text = " ";
+                IDtxt.Enabled = false;
+                IDtxt.Text = "0";
                 nameTxt.Text = " ";
                 startDateTxt.Text = " ";
                 endDateTxt.Text = " ";
@@ -45,9 +44,10 @@ namespace WorkShop4
 
             }
 
-            else
+            else // user clicked modify
             {
                 IDtxt.Enabled = false;
+                IDtxt.Text = currentPackage.PackageId.ToString();
                 nameTxt.Text = currentPackage.PkgName;
                 startDateTxt.Text = currentPackage.PkgStartDate.ToString();
                 endDateTxt.Text = currentPackage.PkgEndDate.ToString();
@@ -63,22 +63,23 @@ namespace WorkShop4
         private void saveBtn_Click(object sender, EventArgs e)
         {
 
-            // package = new Package();
+            package = new Package();
 
-            //package.PackageId = Convert.ToInt32(IDtxt.Text);
-            currentPackage.PkgName = nameTxt.Text;
-            currentPackage.PkgStartDate = Convert.ToDateTime(startDateTxt.Text);
-            currentPackage.PkgEndDate = Convert.ToDateTime(endDateTxt.Text);
-            currentPackage.PkgDesc = descriptionTxt.Text;
-            currentPackage.PkgBasePrice = Convert.ToDecimal(packagebasepriceTxt.Text);
-            currentPackage.PkgAgencyCommission = Convert.ToDecimal(commissionTxt.Text);
+            package.PackageId = Convert.ToInt32(IDtxt.Text);
+            package.PkgName = nameTxt.Text;
+            package.PkgStartDate = Convert.ToDateTime(startDateTxt.Text);
+            package.PkgEndDate = Convert.ToDateTime(endDateTxt.Text);
+            package.PkgDesc = descriptionTxt.Text;
+            package.PkgBasePrice = Convert.ToDecimal(packagebasepriceTxt.Text);
+            package.PkgAgencyCommission = Convert.ToDecimal(commissionTxt.Text);
 
-            if (buttonstatadd == true)
+            if (buttonstatadd == true) //add a package
 
                 context.Packages.Add(package);
 
-            else
-            //    context.Packages.Update(package);
+            else  //modify a package
+                context.Packages.Update(package);
+
             context.SaveChanges();
             MessageBox.Show("Record Inserted Succefully");
             this.Close();

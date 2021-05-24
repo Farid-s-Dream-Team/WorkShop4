@@ -19,8 +19,6 @@ namespace WorkShop4
 
         public bool buttonclickadd = false;
 
-        //public bool viewpackage = false;
-
         public ProductFrm()
         {
             InitializeComponent();
@@ -43,8 +41,6 @@ namespace WorkShop4
             if (dataGridproduct.SelectedRows.Count > 0)
             {
                 currentProduct = (Product)dataGridproduct.SelectedRows[0].DataBoundItem;
-                //int index = dataGridproduct.SelectedCells[0].RowIndex;
-                //string ProductID = (string)dataGridproduct.Rows[index].Cells[0].Value;
             }
         }
 

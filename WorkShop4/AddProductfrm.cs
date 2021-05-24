@@ -15,7 +15,6 @@ namespace WorkShop4
 
     {
         TravelExpertsContext context = new TravelExpertsContext();
-        //public TravelExpertsContext context { get; set; }
        
         public Product currentProduct { get; set; }
         public bool buttonstatusadd { get; set; }
