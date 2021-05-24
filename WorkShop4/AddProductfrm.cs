@@ -14,29 +14,31 @@ namespace WorkShop4
     public partial class AddProductfrm : Form
 
     {
-        public TravelExpertsContext context { get; set; }
+        TravelExpertsContext context = new TravelExpertsContext();
+        //public TravelExpertsContext context { get; set; }
        
         public Product currentProduct { get; set; }
-
         public bool buttonstatusadd { get; set; }
+        private Product product = null;
 
         public AddProductfrm()
         {
             InitializeComponent();
         }
 
-        private Product product = null;
         private void AddProductfrm_Load(object sender, EventArgs e)
         {
-            if (buttonstatusadd == true)
+            if (buttonstatusadd == true) //User Clicked Add
             {
-                IDtxt.Text = " ";
+                IDtxt.Enabled = false;
+                IDtxt.Text = "0";
                 productnameTxt.Text = " ";
             }
 
-            else
+            else  // user clicked Modify
             {
                 IDtxt.Enabled = false;
+                IDtxt.Text = currentProduct.ProductId.ToString();
                 productnameTxt.Text = currentProduct.ProdName;
              
             }
@@ -44,17 +46,19 @@ namespace WorkShop4
 
         private void saveBtn_Click(object sender, EventArgs e)
         {
-            // product = new Product();
+            product = new Product
+            {
+                ProductId = Convert.ToInt32(IDtxt.Text),
+                ProdName = productnameTxt.Text
+            };
 
-          //  currentProduct.ProductId = Convert.ToInt32(IDtxt.Text);
-            currentProduct.ProdName = productnameTxt.Text;
 
-            if (buttonstatusadd == true)
+            if (buttonstatusadd == true)  // user clicked Add button
                 context.Products.Add(product);
 
             else
+                context.Products.Update(product);
 
-            //    context.Products.Update(product);
             context.SaveChanges();
             MessageBox.Show("Record Inserted Succefully");
             this.Close();

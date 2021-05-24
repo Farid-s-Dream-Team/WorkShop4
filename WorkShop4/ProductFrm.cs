@@ -43,8 +43,8 @@ namespace WorkShop4
             if (dataGridproduct.SelectedRows.Count > 0)
             {
                 currentProduct = (Product)dataGridproduct.SelectedRows[0].DataBoundItem;
-                int index = dataGridproduct.SelectedCells[0].RowIndex;
-                int ProductID = (int)dataGridproduct.Rows[index].Cells[0].Value;
+                //int index = dataGridproduct.SelectedCells[0].RowIndex;
+                //string ProductID = (string)dataGridproduct.Rows[index].Cells[0].Value;
             }
         }
 
@@ -84,10 +84,10 @@ namespace WorkShop4
         {
             AddProductfrm addProduct = new AddProductfrm();
             // ProductFrm addProduct = new ProductFrm();
-            addProduct.context = context;
+            //addProduct.context = context;
             
             addProduct.currentProduct = currentProduct;
-            addProduct.buttonstatusadd = false;
+            addProduct.buttonstatusadd = false; //for modify button
             addProduct.ShowDialog();
           //  context.SaveChanges();
             Display();
