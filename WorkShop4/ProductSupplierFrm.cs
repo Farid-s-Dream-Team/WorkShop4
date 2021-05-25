@@ -14,10 +14,10 @@ namespace WorkShop4
     public partial class ProductSupplierFrm : Form
     {
         TravelExpertsContext context;
-        ProductsSupplier currentPs;
+        ProductsSupplier currentProductSupplier;
 
         public bool buttonstattadd = false;
-        public bool viewProductsSupplierscs = false;
+        //public bool viewProductsSupplierscs = false;
         
         public ProductSupplierFrm()
         {
@@ -36,8 +36,9 @@ namespace WorkShop4
 
         private void addBtn_Click(object sender, EventArgs e)
         {
+            buttonstattadd = true;
             ProductSupplierFrm addProductSupplier = new ProductSupplierFrm();
-            addProductSupplier.viewProductsSupplierscs = viewProductsSupplierscs;
+            addProductSupplier.buttonstattadd = buttonstattadd;
             addProductSupplier.ShowDialog();
             Display();
         }
@@ -45,7 +46,7 @@ namespace WorkShop4
         private void modifyBtn_Click(object sender, EventArgs e)
         {
             ProductSupplierFrm addProductSupplier = new ProductSupplierFrm();
-            addProductSupplier.currentPs = currentPs;
+            addProductSupplier.currentProductSupplier = currentProductSupplier;
             addProductSupplier.ShowDialog();
             context.SaveChanges();
             Display();
@@ -55,7 +56,7 @@ namespace WorkShop4
 
         private void removeBtn_Click(object sender, EventArgs e)
         {
-            context.ProductsSuppliers.Remove(currentPs);
+            context.ProductsSuppliers.Remove(currentProductSupplier);
             context.SaveChanges();
             Display();
         }
@@ -74,7 +75,7 @@ namespace WorkShop4
         {
             if (productSupplierGrid.SelectedRows.Count > 0)
             {
-                currentPs = (ProductsSupplier)productSupplierGrid.SelectedRows[0].DataBoundItem;
+                currentProductSupplier = (ProductsSupplier)productSupplierGrid.SelectedRows[0].DataBoundItem;
             }
         }
     }

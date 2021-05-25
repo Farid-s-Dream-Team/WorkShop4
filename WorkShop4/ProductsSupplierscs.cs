@@ -13,8 +13,10 @@ namespace WorkShop4
 {
     public partial class ProductsSupplierscs : Form
     {
-        public ProductsSupplier currentPs{ get; set; }
         TravelExpertsContext context = new TravelExpertsContext();
+        public ProductsSupplier currentProductSupplier{ get; set; }
+
+        private ProductsSupplier productsupplier = null;
         public bool buttonStatusAdd { get; set; }
 
         public ProductsSupplierscs()
@@ -24,37 +26,48 @@ namespace WorkShop4
 
         private void ProductsSupplierscs_Load(object sender, EventArgs e)
         {
-            if (buttonStatusAdd == false) //Modify Selected 
+            if (buttonStatusAdd == true) //Modify Selected 
             {
                 productSupplierIdTxt.Enabled = false;
-                productSupplierIdTxt.Text = currentPs.ProductSupplierId.ToString();
-                productIdTxt.Text = currentPs.ProductId.ToString();
-                supplierIdTxt.Text = currentPs.SupplierId.ToString();
-                productTxt.Text = currentPs.Product.ToString();
-                supplierTxt.Text = currentPs.Supplier.ToString();
+                productSupplierIdTxt.Text = "0";
+                productSupplierIdTxt.Text = "";
+                productIdTxt.Text = "";
+                supplierIdTxt.Text = "";
+                productTxt.Text = "";
+                supplierTxt.Text = "";
+            }
+
+            else
+            {
+                productSupplierIdTxt.Enabled = false;
+                productSupplierIdTxt.Text = currentProductSupplier.ProductSupplierId.ToString();
+                productIdTxt.Text = currentProductSupplier.ProductId.ToString();
+                supplierIdTxt.Text = currentProductSupplier.SupplierId.ToString();
+                productTxt.Text = currentProductSupplier.Product.ToString();
+                supplierTxt.Text = currentProductSupplier.Supplier.ToString();
             }
         }
 
         private void okBtn_Click(object sender, EventArgs e)
         {
-            currentPs = new ProductsSupplier();
+            productsupplier = new ProductsSupplier();
             {
-                currentPs.ProductSupplierId = Convert.ToInt32(productSupplierIdTxt.Text);
-                currentPs.ProductId = Convert.ToInt32(productIdTxt.Text);
-                currentPs.SupplierId = Convert.ToInt32(supplierIdTxt.Text);
-                currentPs.Product = productTxt.Text;
-                currentPs.Supplier = supplierTxt.Text;
+                productsupplier.ProductSupplierId = Convert.ToInt32(productSupplierIdTxt.Text);
+                productsupplier.ProductId = Convert.ToInt32(productIdTxt.Text);
+                productsupplier.SupplierId = Convert.ToInt32(supplierIdTxt.Text);
+                //productsupplier.Product = productTxt.Text,
+                //productsupplier.Supplier = supplierTxt.Text;
 
             };
 
             if (buttonStatusAdd == true)
             {
-                context.ProductsSuppliers.Add(currentPs);
+                context.ProductsSuppliers.Add(productsupplier);
 
             }
             else
             {
-                context.ProductsSuppliers.Update(currentPs);
+                context.ProductsSuppliers.Update(productsupplier);
             }
 
             DialogResult Save =
