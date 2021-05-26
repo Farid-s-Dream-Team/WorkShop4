@@ -58,36 +58,42 @@ namespace WorkShop4
             // 
             this.nameTxt.Location = new System.Drawing.Point(206, 79);
             this.nameTxt.Name = "nameTxt";
-            this.nameTxt.Size = new System.Drawing.Size(100, 23);
+            this.nameTxt.Size = new System.Drawing.Size(221, 23);
             this.nameTxt.TabIndex = 1;
+            this.nameTxt.Validating += new System.ComponentModel.CancelEventHandler(this.nameTxt_Validating);
+            this.nameTxt.Validated += new System.EventHandler(this.nameTxt_Validated);
             // 
             // startDateTxt
             // 
             this.startDateTxt.Location = new System.Drawing.Point(206, 122);
             this.startDateTxt.Name = "startDateTxt";
-            this.startDateTxt.Size = new System.Drawing.Size(100, 23);
+            this.startDateTxt.Size = new System.Drawing.Size(221, 23);
             this.startDateTxt.TabIndex = 2;
+            this.startDateTxt.TextChanged += new System.EventHandler(this.startDateTxt_TextChanged);
             // 
             // endDateTxt
             // 
             this.endDateTxt.Location = new System.Drawing.Point(206, 166);
             this.endDateTxt.Name = "endDateTxt";
-            this.endDateTxt.Size = new System.Drawing.Size(100, 23);
+            this.endDateTxt.Size = new System.Drawing.Size(221, 23);
             this.endDateTxt.TabIndex = 3;
+            this.endDateTxt.Validating += new System.ComponentModel.CancelEventHandler(this.endDateTxt_Validating);
             // 
             // descriptionTxt
             // 
             this.descriptionTxt.Location = new System.Drawing.Point(206, 210);
             this.descriptionTxt.Name = "descriptionTxt";
-            this.descriptionTxt.Size = new System.Drawing.Size(100, 23);
+            this.descriptionTxt.Size = new System.Drawing.Size(357, 23);
             this.descriptionTxt.TabIndex = 4;
+            this.descriptionTxt.Validating += new System.ComponentModel.CancelEventHandler(this.descriptionTxt_Validating);
             // 
             // commissionTxt
             // 
             this.commissionTxt.Location = new System.Drawing.Point(206, 290);
             this.commissionTxt.Name = "commissionTxt";
-            this.commissionTxt.Size = new System.Drawing.Size(100, 23);
+            this.commissionTxt.Size = new System.Drawing.Size(221, 23);
             this.commissionTxt.TabIndex = 5;
+            this.commissionTxt.Validating += new System.ComponentModel.CancelEventHandler(this.commissionTxt_Validating);
             // 
             // label1
             // 
@@ -145,7 +151,7 @@ namespace WorkShop4
             // 
             // saveBtn
             // 
-            this.saveBtn.Location = new System.Drawing.Point(126, 337);
+            this.saveBtn.Location = new System.Drawing.Point(206, 337);
             this.saveBtn.Name = "saveBtn";
             this.saveBtn.Size = new System.Drawing.Size(75, 23);
             this.saveBtn.TabIndex = 8;
@@ -155,7 +161,7 @@ namespace WorkShop4
             // 
             // cancelBtn
             // 
-            this.cancelBtn.Location = new System.Drawing.Point(231, 337);
+            this.cancelBtn.Location = new System.Drawing.Point(352, 337);
             this.cancelBtn.Name = "cancelBtn";
             this.cancelBtn.Size = new System.Drawing.Size(75, 23);
             this.cancelBtn.TabIndex = 8;
@@ -167,7 +173,7 @@ namespace WorkShop4
             // 
             this.packagebasepriceTxt.Location = new System.Drawing.Point(206, 253);
             this.packagebasepriceTxt.Name = "packagebasepriceTxt";
-            this.packagebasepriceTxt.Size = new System.Drawing.Size(100, 23);
+            this.packagebasepriceTxt.Size = new System.Drawing.Size(221, 23);
             this.packagebasepriceTxt.TabIndex = 9;
             // 
             // label7
@@ -183,7 +189,7 @@ namespace WorkShop4
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(440, 384);
+            this.ClientSize = new System.Drawing.Size(644, 477);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.packagebasepriceTxt);
             this.Controls.Add(this.cancelBtn);

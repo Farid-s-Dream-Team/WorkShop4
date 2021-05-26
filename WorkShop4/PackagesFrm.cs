@@ -27,7 +27,7 @@ namespace WorkShop4
         private void Display()
         {
             context = new TravelExpertsContext();
-            dataGridpakage.AutoGenerateColumns = true;
+            dataGridpakage.AutoGenerateColumns = false;
             dataGridpakage.DataSource = context.Packages.ToList();
         }
 
@@ -52,6 +52,12 @@ namespace WorkShop4
             if (dataGridpakage.SelectedRows.Count > 0)
             {
                 currentPackage = (Package)dataGridpakage.SelectedRows[0].DataBoundItem;
+                int index = dataGridpakage.SelectedCells[0].RowIndex;
+                int PackageId = (int)dataGridpakage.Rows[index].Cells[0].Value;
+
+             //   currentPackage = context.Packages.Find(PackageId);
+             //   dataGridpakage.DataSource = currentPackage.PackagesProductsSuppliers.ToList();
+
             }
         }
 

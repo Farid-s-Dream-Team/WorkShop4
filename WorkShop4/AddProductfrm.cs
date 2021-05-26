@@ -18,6 +18,7 @@ namespace WorkShop4
        
         public Product currentProduct { get; set; }
         public bool buttonstatusadd { get; set; }
+
         private Product product = null;
 
         public AddProductfrm()
@@ -71,6 +72,29 @@ namespace WorkShop4
         private void cancelBtn_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void productnameTxt_Validating(object sender, CancelEventArgs e)
+        {
+            if (productnameTxt.Text.Length == 0 ) 
+            {
+                MessageBox.Show("Product name can not be empty");
+                productnameTxt.Focus();
+            }
+            //else 
+            //{
+            //    productnameTxt.Text = "";
+            //    MessageBox.Show("Product name can not be empty");
+            //}
+        }
+
+        private void productnameTxt_Validated(object sender, EventArgs e)
+        {
+            if (productnameTxt.Text.Length > 15 )
+            {
+                MessageBox.Show("This field must be less than 15");
+                productnameTxt.Focus();
+            }
         }
     }
 }

@@ -25,6 +25,7 @@ namespace WorkShop4.Models
         public DateTime? PkgStartDate { get; set; }
         [Column(TypeName = "datetime")]
         public DateTime? PkgEndDate { get; set; }
+        
         [StringLength(50)]
         public string PkgDesc { get; set; }
         [Column(TypeName = "money")]

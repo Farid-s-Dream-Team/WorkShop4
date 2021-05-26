@@ -60,6 +60,8 @@ namespace WorkShop4
             this.productnameTxt.Name = "productnameTxt";
             this.productnameTxt.Size = new System.Drawing.Size(100, 23);
             this.productnameTxt.TabIndex = 9;
+            this.productnameTxt.Validating += new System.ComponentModel.CancelEventHandler(this.productnameTxt_Validating);
+            this.productnameTxt.Validated += new System.EventHandler(this.productnameTxt_Validated);
             // 
             // label2
             // 
