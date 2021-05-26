@@ -38,7 +38,6 @@ namespace WorkShop4
         private void addSupplierBtn_Click(object sender, EventArgs e)
         {
             clickAddButton = true;
-
             AddSuppliersFrm SupplierData = new AddSuppliersFrm();
             SupplierData.AddButton = clickAddButton;
             SupplierData.ShowDialog();
@@ -67,9 +66,9 @@ namespace WorkShop4
 
         private void modifySupplierBtn_Click(object sender, EventArgs e)
         {
-            ModifySupplierFrm updateSupplier = new ModifySupplierFrm();
-            updateSupplier.contextMSF = context;
-            updateSupplier.currentSupplierMSF = currentSupplier;
+            AddSuppliersFrm updateSupplier = new AddSuppliersFrm();
+            //updateSupplier.context = context;
+            updateSupplier.currentSupplier = currentSupplier;
             updateSupplier.AddButton = false;
             updateSupplier.ShowDialog();
             Display();

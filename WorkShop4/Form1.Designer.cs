@@ -65,6 +65,7 @@ namespace WorkShop4
             this.products_suppliersBtn.TabIndex = 3;
             this.products_suppliersBtn.Text = " Products Suppliers";
             this.products_suppliersBtn.UseVisualStyleBackColor = true;
+            this.products_suppliersBtn.Click += new System.EventHandler(this.products_suppliersBtn_Click);
             // 
             // suppliersBtn
             // 

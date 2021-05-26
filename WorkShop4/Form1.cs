@@ -44,5 +44,11 @@ namespace WorkShop4
             SupplierFrm SupliersData = new SupplierFrm();
             SupliersData.ShowDialog();
         }
+
+        private void products_suppliersBtn_Click(object sender, EventArgs e)
+        {
+            ProductSupplierFrm ProdSup = new ProductSupplierFrm();
+            ProdSup.ShowDialog();
+        }
     }
 }

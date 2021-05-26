@@ -68,6 +68,7 @@ namespace WorkShop4
             this.supNameTxt.Name = "supNameTxt";
             this.supNameTxt.Size = new System.Drawing.Size(100, 23);
             this.supNameTxt.TabIndex = 3;
+            this.supNameTxt.Validating += new System.ComponentModel.CancelEventHandler(this.supNameTxt_Validating);
             // 
             // saveSupplierBtn
             // 
