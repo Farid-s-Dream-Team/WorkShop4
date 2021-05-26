@@ -66,6 +66,7 @@ namespace WorkShop4
             this.products_suppliersBtn.TabIndex = 3;
             this.products_suppliersBtn.Text = " Products Suppliers";
             this.products_suppliersBtn.UseVisualStyleBackColor = true;
+            this.products_suppliersBtn.Click += new System.EventHandler(this.products_suppliersBtn_Click);
             // 
             // suppliersBtn
             // 
@@ -75,6 +76,7 @@ namespace WorkShop4
             this.suppliersBtn.TabIndex = 4;
             this.suppliersBtn.Text = "Suppliers";
             this.suppliersBtn.UseVisualStyleBackColor = true;
+            this.suppliersBtn.Click += new System.EventHandler(this.suppliersBtn_Click);
             // 
             // pack_prod_suppBtn
             // 
@@ -82,7 +84,7 @@ namespace WorkShop4
             this.pack_prod_suppBtn.Name = "pack_prod_suppBtn";
             this.pack_prod_suppBtn.Size = new System.Drawing.Size(126, 40);
             this.pack_prod_suppBtn.TabIndex = 5;
-            this.pack_prod_suppBtn.Text = "Packates Products Suppliers";
+            this.pack_prod_suppBtn.Text = "Packages Products Suppliers";
             this.pack_prod_suppBtn.UseVisualStyleBackColor = true;
             this.pack_prod_suppBtn.Click += new System.EventHandler(this.pack_prod_suppBtn_Click);
             // 

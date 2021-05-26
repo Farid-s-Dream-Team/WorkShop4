@@ -50,5 +50,17 @@ namespace WorkShop4
             PackageProductSupplierFrm addPPS = new PackageProductSupplierFrm();
             addPPS.ShowDialog();
         }
+
+        private void suppliersBtn_Click(object sender, EventArgs e)
+        {
+            SupplierFrm SupliersData = new SupplierFrm();
+            SupliersData.ShowDialog();
+        }
+
+        private void products_suppliersBtn_Click(object sender, EventArgs e)
+        {
+            ProductSupplierFrm ProdSup = new ProductSupplierFrm();
+            ProdSup.ShowDialog();
+        }
     }
 }
