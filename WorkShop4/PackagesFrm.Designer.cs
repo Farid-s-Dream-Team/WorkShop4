@@ -34,17 +34,32 @@ namespace WorkShop4
             this.modifyBtn = new System.Windows.Forms.Button();
             this.RemoveBtn = new System.Windows.Forms.Button();
             this.ExitBtn = new System.Windows.Forms.Button();
+            this.PackageId = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.PkgName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.PkgStartDate = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.PkgEndDate = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.PkgDesc = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.PkgBasePrice = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.PkgAgencyCommission = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridpakage)).BeginInit();
             this.SuspendLayout();
             // 
             // dataGridpakage
             // 
             this.dataGridpakage.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridpakage.Location = new System.Drawing.Point(51, 22);
+            this.dataGridpakage.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.PackageId,
+            this.PkgName,
+            this.PkgStartDate,
+            this.PkgEndDate,
+            this.PkgDesc,
+            this.PkgBasePrice,
+            this.PkgAgencyCommission});
+            this.dataGridpakage.Location = new System.Drawing.Point(31, 25);
             this.dataGridpakage.Name = "dataGridpakage";
             this.dataGridpakage.RowTemplate.Height = 25;
             this.dataGridpakage.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridpakage.Size = new System.Drawing.Size(570, 218);
+            this.dataGridpakage.Size = new System.Drawing.Size(745, 240);
             this.dataGridpakage.TabIndex = 0;
             this.dataGridpakage.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridpakage_CellContentClick);
             this.dataGridpakage.SelectionChanged += new System.EventHandler(this.dataGridpakage_SelectionChanged);
@@ -89,11 +104,53 @@ namespace WorkShop4
             this.ExitBtn.UseVisualStyleBackColor = true;
             this.ExitBtn.Click += new System.EventHandler(this.ExitBtn_Click);
             // 
+            // PackageId
+            // 
+            this.PackageId.DataPropertyName = "PackageId";
+            this.PackageId.HeaderText = "PackageId";
+            this.PackageId.Name = "PackageId";
+            // 
+            // PkgName
+            // 
+            this.PkgName.DataPropertyName = "PkgName";
+            this.PkgName.HeaderText = "PkgName";
+            this.PkgName.Name = "PkgName";
+            // 
+            // PkgStartDate
+            // 
+            this.PkgStartDate.DataPropertyName = "PkgStartDate";
+            this.PkgStartDate.HeaderText = "PkgStartDate";
+            this.PkgStartDate.Name = "PkgStartDate";
+            // 
+            // PkgEndDate
+            // 
+            this.PkgEndDate.DataPropertyName = "PkgEndDate";
+            this.PkgEndDate.HeaderText = "PkgEndDate";
+            this.PkgEndDate.Name = "PkgEndDate";
+            // 
+            // PkgDesc
+            // 
+            this.PkgDesc.DataPropertyName = "PkgDesc";
+            this.PkgDesc.HeaderText = "PkgDesc";
+            this.PkgDesc.Name = "PkgDesc";
+            // 
+            // PkgBasePrice
+            // 
+            this.PkgBasePrice.DataPropertyName = "PkgBasePrice";
+            this.PkgBasePrice.HeaderText = "PkgBasePrice";
+            this.PkgBasePrice.Name = "PkgBasePrice";
+            // 
+            // PkgAgencyCommission
+            // 
+            this.PkgAgencyCommission.DataPropertyName = "PkgAgencyCommission";
+            this.PkgAgencyCommission.HeaderText = "PkgAgencyCommision";
+            this.PkgAgencyCommission.Name = "PkgAgencyCommission";
+            // 
             // PackagesFrm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(814, 426);
             this.Controls.Add(this.ExitBtn);
             this.Controls.Add(this.RemoveBtn);
             this.Controls.Add(this.modifyBtn);
@@ -114,5 +171,12 @@ namespace WorkShop4
         private System.Windows.Forms.Button modifyBtn;
         private System.Windows.Forms.Button RemoveBtn;
         private System.Windows.Forms.Button ExitBtn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn PackageId;
+        private System.Windows.Forms.DataGridViewTextBoxColumn PkgName;
+        private System.Windows.Forms.DataGridViewTextBoxColumn PkgStartDate;
+        private System.Windows.Forms.DataGridViewTextBoxColumn PkgEndDate;
+        private System.Windows.Forms.DataGridViewTextBoxColumn PkgDesc;
+        private System.Windows.Forms.DataGridViewTextBoxColumn PkgBasePrice;
+        private System.Windows.Forms.DataGridViewTextBoxColumn PkgAgencyCommission;
     }
 }

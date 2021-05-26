@@ -34,12 +34,17 @@ namespace WorkShop4
             this.modifyBtn = new System.Windows.Forms.Button();
             this.RemoveBtn = new System.Windows.Forms.Button();
             this.ExitBtn = new System.Windows.Forms.Button();
+            this.ProductID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ProdName = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridproduct)).BeginInit();
             this.SuspendLayout();
             // 
             // dataGridproduct
             // 
             this.dataGridproduct.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridproduct.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.ProductID,
+            this.ProdName});
             this.dataGridproduct.Location = new System.Drawing.Point(54, 22);
             this.dataGridproduct.Name = "dataGridproduct";
             this.dataGridproduct.RowTemplate.Height = 25;
@@ -89,6 +94,18 @@ namespace WorkShop4
             this.ExitBtn.UseVisualStyleBackColor = true;
             this.ExitBtn.Click += new System.EventHandler(this.ExitBtn_Click);
             // 
+            // ProductID
+            // 
+            this.ProductID.DataPropertyName = "ProductID";
+            this.ProductID.HeaderText = "ProductID";
+            this.ProductID.Name = "ProductID";
+            // 
+            // ProdName
+            // 
+            this.ProdName.DataPropertyName = "ProdName";
+            this.ProdName.HeaderText = "ProdName";
+            this.ProdName.Name = "ProdName";
+            // 
             // ProductFrm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
@@ -114,5 +131,7 @@ namespace WorkShop4
         private System.Windows.Forms.Button modifyBtn;
         private System.Windows.Forms.Button RemoveBtn;
         private System.Windows.Forms.Button ExitBtn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ProductID;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ProdName;
     }
 }

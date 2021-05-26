@@ -34,17 +34,22 @@ namespace WorkShop4
             this.ExitBtn = new System.Windows.Forms.Button();
             this.RemoveBtn = new System.Windows.Forms.Button();
             this.modifyBtn = new System.Windows.Forms.Button();
+            this.PackageId = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ProductSupplierId = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridPPS)).BeginInit();
             this.SuspendLayout();
             // 
             // dataGridPPS
             // 
             this.dataGridPPS.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridPPS.Location = new System.Drawing.Point(58, 30);
+            this.dataGridPPS.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.PackageId,
+            this.ProductSupplierId});
+            this.dataGridPPS.Location = new System.Drawing.Point(69, 29);
             this.dataGridPPS.Name = "dataGridPPS";
             this.dataGridPPS.RowTemplate.Height = 25;
             this.dataGridPPS.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridPPS.Size = new System.Drawing.Size(570, 218);
+            this.dataGridPPS.Size = new System.Drawing.Size(421, 220);
             this.dataGridPPS.TabIndex = 1;
             // 
             // addBtn
@@ -59,7 +64,7 @@ namespace WorkShop4
             // 
             // ExitBtn
             // 
-            this.ExitBtn.Location = new System.Drawing.Point(432, 320);
+            this.ExitBtn.Location = new System.Drawing.Point(415, 320);
             this.ExitBtn.Name = "ExitBtn";
             this.ExitBtn.Size = new System.Drawing.Size(75, 23);
             this.ExitBtn.TabIndex = 3;
@@ -85,6 +90,18 @@ namespace WorkShop4
             this.modifyBtn.TabIndex = 5;
             this.modifyBtn.Text = "&Modify";
             this.modifyBtn.UseVisualStyleBackColor = true;
+            // 
+            // PackageId
+            // 
+            this.PackageId.DataPropertyName = "PackageId";
+            this.PackageId.HeaderText = "PackageId";
+            this.PackageId.Name = "PackageId";
+            // 
+            // ProductSupplierId
+            // 
+            this.ProductSupplierId.DataPropertyName = "ProductSupplierId";
+            this.ProductSupplierId.HeaderText = "ProductSupplierId";
+            this.ProductSupplierId.Name = "ProductSupplierId";
             // 
             // PackageProductSupplierFrm
             // 
@@ -112,5 +129,7 @@ namespace WorkShop4
         private System.Windows.Forms.Button ExitBtn;
         private System.Windows.Forms.Button RemoveBtn;
         private System.Windows.Forms.Button modifyBtn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn PackageId;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ProductSupplierId;
     }
 }

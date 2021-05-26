@@ -29,7 +29,7 @@ namespace WorkShop4
         private void Display()
         {
             context = new TravelExpertsContext();
-            dataGridPPS.AutoGenerateColumns = true;
+            dataGridPPS.AutoGenerateColumns = false;
             dataGridPPS.DataSource = context.PackagesProductsSuppliers.ToList();
         }
 

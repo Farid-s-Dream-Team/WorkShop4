@@ -27,7 +27,7 @@ namespace WorkShop4
         private void Display()
         {
             context = new TravelExpertsContext();
-            dataGridproduct.AutoGenerateColumns = true;
+            dataGridproduct.AutoGenerateColumns = false;
             dataGridproduct.DataSource = context.Products.ToList();
             //Display();
         }
@@ -41,6 +41,7 @@ namespace WorkShop4
             if (dataGridproduct.SelectedRows.Count > 0)
             {
                 currentProduct = (Product)dataGridproduct.SelectedRows[0].DataBoundItem;
+                       
             }
         }
 

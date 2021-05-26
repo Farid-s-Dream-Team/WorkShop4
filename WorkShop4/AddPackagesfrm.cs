@@ -16,8 +16,9 @@ namespace WorkShop4
         TravelExpertsContext context = new TravelExpertsContext();
 
         public Package currentPackage { get; set; }
+
         private Package package = null;
-                
+
         public bool buttonstatadd { get; set; }
 
         public AddPackagesfrm()
@@ -89,6 +90,61 @@ namespace WorkShop4
         private void cancelBtn_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void commissionTxt_Validating(object sender, CancelEventArgs e)
+        {
+            if (Convert.ToInt32(commissionTxt.Text) > Decimal.Parse(packagebasepriceTxt.Text)/2)
+            {
+                MessageBox.Show("Commission amount should be less then half the Package Base Price");
+                commissionTxt.Focus();
+            }
+        }
+
+        private void nameTxt_Validating(object sender, CancelEventArgs e)
+        {
+            if (nameTxt.Text.Length <= 1)
+            {
+                MessageBox.Show("Package name can not be empty ");
+
+            }                     
+
+        }
+
+        private void descriptionTxt_Validating(object sender, CancelEventArgs e)
+        {
+            if (descriptionTxt.Text.Length <= 1)
+            {
+                MessageBox.Show("Description name can not be empty");
+                descriptionTxt.Focus();
+            }
+        }
+
+        private void nameTxt_Validated(object sender, EventArgs e)
+        {
+            if (nameTxt.Text.Length > 25)
+            {
+                MessageBox.Show(" This field musb be less than 25");
+                nameTxt.Focus();
+            }
+        }
+
+        private void endDateTxt_Validating(object sender, CancelEventArgs e)
+        {
+            
+        }
+
+        private void startDateTxt_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void endDateTxt_Validating_1(object sender, CancelEventArgs e)
+        {
+            if (DateTime.Parse(endDateTxt.Text) < DateTime.Parse(startDateTxt.Text))
+            {
+                MessageBox.Show("End Date can not be less then Start Date");
+            }
         }
     }
 }
