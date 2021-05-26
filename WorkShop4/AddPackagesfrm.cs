@@ -131,15 +131,20 @@ namespace WorkShop4
 
         private void endDateTxt_Validating(object sender, CancelEventArgs e)
         {
-            if (DateTime.Parse(endDateTxt.Text) < DateTime.Parse(startDateTxt.Text))
-            {
-                MessageBox.Show("End Date can not be less then Start Date");
-            }
+            
         }
 
         private void startDateTxt_TextChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private void endDateTxt_Validating_1(object sender, CancelEventArgs e)
+        {
+            if (DateTime.Parse(endDateTxt.Text) < DateTime.Parse(startDateTxt.Text))
+            {
+                MessageBox.Show("End Date can not be less then Start Date");
+            }
         }
     }
 }

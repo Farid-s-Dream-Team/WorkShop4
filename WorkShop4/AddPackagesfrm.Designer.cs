@@ -77,7 +77,7 @@ namespace WorkShop4
             this.endDateTxt.Name = "endDateTxt";
             this.endDateTxt.Size = new System.Drawing.Size(221, 23);
             this.endDateTxt.TabIndex = 3;
-            this.endDateTxt.Validating += new System.ComponentModel.CancelEventHandler(this.endDateTxt_Validating);
+            this.endDateTxt.Validating += new System.ComponentModel.CancelEventHandler(this.endDateTxt_Validating_1);
             // 
             // descriptionTxt
             // 
