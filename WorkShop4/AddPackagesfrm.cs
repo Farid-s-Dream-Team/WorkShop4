@@ -36,12 +36,12 @@ namespace WorkShop4
             {
                 IDtxt.Enabled = false;
                 IDtxt.Text = "0";
-                nameTxt.Text = " ";
-                startDateTxt.Text = " ";
-                endDateTxt.Text = " ";
-                descriptionTxt.Text = " ";
-                packagebasepriceTxt.Text = " ";
-                commissionTxt.Text = " ";
+                nameTxt.Text = "";
+                startDateTxt.Text = "";
+                endDateTxt.Text = "";
+                descriptionTxt.Text = "";
+                packagebasepriceTxt.Text = "";
+                commissionTxt.Text = "";
 
             }
 
@@ -80,10 +80,25 @@ namespace WorkShop4
 
             else  //modify a package
                 context.Packages.Update(package);
+            
+            DialogResult save =
+                MessageBox.Show(
+                    $"Saving this Entry:\nID: {IDtxt.Text}\nName: {nameTxt.Text}\nStart Date: {startDateTxt.Text}\n" +
+                    $"End Date: {endDateTxt.Text}",
+                    "Confirm Entry",
+                    MessageBoxButtons.OKCancel,
+                    MessageBoxIcon.Question,
+                    MessageBoxDefaultButton.Button2);
+            if (save == DialogResult.OK)
+            {
+                context.SaveChanges();
+                this.Close();
+            }
 
-            context.SaveChanges();
-            MessageBox.Show("Record Inserted Succefully");
-            this.Close();
+            //}
+            //context.SaveChanges();
+            //MessageBox.Show("Record Inserted Succefully");
+            //this.Close();
 
         }
 
@@ -94,9 +109,15 @@ namespace WorkShop4
 
         private void commissionTxt_Validating(object sender, CancelEventArgs e)
         {
-            if (Convert.ToInt32(commissionTxt.Text) > Decimal.Parse(packagebasepriceTxt.Text)/2)
+            if (commissionTxt.Text.Length <= 0) 
             {
-                MessageBox.Show("Commission amount should be less then half the Package Base Price");
+                MessageBox.Show("Entry Error\nYou must enter a commission rate, Enter 0 if Unknown.");
+                commissionTxt.Focus();
+            }
+
+            else if (Convert.ToInt32(commissionTxt.Text) > Decimal.Parse(packagebasepriceTxt.Text)/2)
+            {
+                MessageBox.Show("Entry Error\nCommission amount should be less then half the Package Base Price");
                 commissionTxt.Focus();
             }
         }
@@ -105,7 +126,7 @@ namespace WorkShop4
         {
             if (nameTxt.Text.Length <= 1)
             {
-                MessageBox.Show("Package name can not be empty ");
+                MessageBox.Show("Entry Error\nPackage name can not be empty ");
 
             }                     
 
@@ -115,16 +136,16 @@ namespace WorkShop4
         {
             if (descriptionTxt.Text.Length <= 1)
             {
-                MessageBox.Show("Description name can not be empty");
+                MessageBox.Show("Entry Error\nDescription name can not be empty");
                 descriptionTxt.Focus();
             }
         }
 
         private void nameTxt_Validated(object sender, EventArgs e)
         {
-            if (nameTxt.Text.Length > 25)
+            if (nameTxt.Text.Length > 25 && nameTxt.Text.Length <= 0)
             {
-                MessageBox.Show(" This field musb be less than 25");
+                MessageBox.Show("Entry Error\nName must have content and not be less than 25");
                 nameTxt.Focus();
             }
         }
@@ -141,9 +162,14 @@ namespace WorkShop4
 
         private void endDateTxt_Validating_1(object sender, CancelEventArgs e)
         {
-            if (DateTime.Parse(endDateTxt.Text) < DateTime.Parse(startDateTxt.Text))
+            if(endDateTxt.Text.Length <= 0)
             {
-                MessageBox.Show("End Date can not be less then Start Date");
+                MessageBox.Show("Entry Error\nEnd Date can not be empty");
+                descriptionTxt.Focus();
+            }
+            else if (DateTime.Parse(endDateTxt.Text) < DateTime.Parse(startDateTxt.Text))
+            {
+                MessageBox.Show("Entry Error\nEnd Date can not be less then Start Date");
             }
         }
     }
