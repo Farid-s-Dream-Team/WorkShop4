@@ -95,11 +95,6 @@ namespace WorkShop4
                 this.Close();
             }
 
-            //}
-            //context.SaveChanges();
-            //MessageBox.Show("Record Inserted Succefully");
-            //this.Close();
-
         }
 
         private void cancelBtn_Click(object sender, EventArgs e)
@@ -109,12 +104,21 @@ namespace WorkShop4
 
         private void commissionTxt_Validating(object sender, CancelEventArgs e)
         {
-            if (commissionTxt.Text.Length <= 0) 
+            if (packagebasepriceTxt.Text == "")
+            {
+                MessageBox.Show("Entry Error\nYou must enter the Package Price, before the commission Price.");
+                packagebasepriceTxt.Focus();
+            }
+            else if (commissionTxt.Text.Length <= 0) 
             {
                 MessageBox.Show("Entry Error\nYou must enter a commission rate, Enter 0 if Unknown.");
                 commissionTxt.Focus();
             }
-
+            else if (!Decimal.TryParse(commissionTxt.Text, out _))
+            {
+                MessageBox.Show($"Entry Error\nMust be a valid number");
+                commissionTxt.Focus();
+            }
             else if (Convert.ToInt32(commissionTxt.Text) > Decimal.Parse(packagebasepriceTxt.Text)/2)
             {
                 MessageBox.Show("Entry Error\nCommission amount should be less then half the Package Base Price");
@@ -124,19 +128,32 @@ namespace WorkShop4
 
         private void nameTxt_Validating(object sender, CancelEventArgs e)
         {
-            if (nameTxt.Text.Length <= 1)
-            {
-                MessageBox.Show("Entry Error\nPackage name can not be empty ");
+            //if (nameTxt.Text.Length <= 1)
+            //{
+            //    MessageBox.Show("Entry Error\nPackage name can not be empty ");
+            //    nameTxt.Focus();
 
-            }                     
+            //}
+            if (nameTxt.Text == "")
+            {
+                MessageBox.Show($"Entry Error:\nName is a required field.");
+                nameTxt.Focus();
+            }
+
+            if (nameTxt.Text.Length > 50)
+            {
+                MessageBox.Show("The maximum amount of characters for a Product Name is 50");
+                nameTxt.Focus();
+                nameTxt.SelectAll();
+            }
 
         }
 
         private void descriptionTxt_Validating(object sender, CancelEventArgs e)
         {
-            if (descriptionTxt.Text.Length <= 1)
+            if (descriptionTxt.Text.Length <= 1 & descriptionTxt.Text.Length > 40)
             {
-                MessageBox.Show("Entry Error\nDescription name can not be empty");
+                MessageBox.Show("Entry Error\nDescription name can not be empty and must be less than 50 characters.");
                 descriptionTxt.Focus();
             }
         }
@@ -150,26 +167,36 @@ namespace WorkShop4
             }
         }
 
-        private void endDateTxt_Validating(object sender, CancelEventArgs e)
-        {
-            
-        }
-
-        private void startDateTxt_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
         private void endDateTxt_Validating_1(object sender, CancelEventArgs e)
         {
             if(endDateTxt.Text.Length <= 0)
             {
                 MessageBox.Show("Entry Error\nEnd Date can not be empty");
-                descriptionTxt.Focus();
+                endDateTxt.Focus();
+            }
+            else if (!DateTime.TryParse(endDateTxt.Text, out _))
+            {
+                MessageBox.Show($"Entry Error\nMust be a valid date\nPreferred Format: YYYY/MM/DD");
+                endDateTxt.Focus();
             }
             else if (DateTime.Parse(endDateTxt.Text) < DateTime.Parse(startDateTxt.Text))
             {
                 MessageBox.Show("Entry Error\nEnd Date can not be less then Start Date");
+                endDateTxt.Focus();
+            }
+        }
+
+        private void startDateTxt_Validating(object sender, CancelEventArgs e)
+        {
+            if (startDateTxt.Text.Length <= 0)
+            {
+                MessageBox.Show("Entry Error\nStart Date can not be empty");
+                startDateTxt.Focus();
+            }
+            else if (!DateTime.TryParse(startDateTxt.Text, out _))
+            {
+                MessageBox.Show($"Entry Error\nMust be a valid date\nPreferred Format: YYYY/MM/DD");
+                startDateTxt.Focus();
             }
         }
     }
