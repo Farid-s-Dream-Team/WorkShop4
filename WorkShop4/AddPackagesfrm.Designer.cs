@@ -45,115 +45,123 @@ namespace WorkShop4
             this.cancelBtn = new System.Windows.Forms.Button();
             this.packagebasepriceTxt = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
+            this.label8 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // IDtxt
             // 
-            this.IDtxt.Location = new System.Drawing.Point(206, 38);
+            this.IDtxt.Location = new System.Drawing.Point(248, 155);
+            this.IDtxt.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.IDtxt.Name = "IDtxt";
-            this.IDtxt.Size = new System.Drawing.Size(100, 23);
+            this.IDtxt.Size = new System.Drawing.Size(114, 27);
             this.IDtxt.TabIndex = 0;
             // 
             // nameTxt
             // 
-            this.nameTxt.Location = new System.Drawing.Point(206, 79);
+            this.nameTxt.Location = new System.Drawing.Point(248, 209);
+            this.nameTxt.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.nameTxt.Name = "nameTxt";
-            this.nameTxt.Size = new System.Drawing.Size(221, 23);
+            this.nameTxt.Size = new System.Drawing.Size(252, 27);
             this.nameTxt.TabIndex = 1;
             this.nameTxt.Validating += new System.ComponentModel.CancelEventHandler(this.nameTxt_Validating);
             this.nameTxt.Validated += new System.EventHandler(this.nameTxt_Validated);
             // 
             // startDateTxt
             // 
-            this.startDateTxt.Location = new System.Drawing.Point(206, 122);
+            this.startDateTxt.Location = new System.Drawing.Point(248, 267);
+            this.startDateTxt.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.startDateTxt.Name = "startDateTxt";
-            this.startDateTxt.Size = new System.Drawing.Size(221, 23);
+            this.startDateTxt.Size = new System.Drawing.Size(252, 27);
             this.startDateTxt.TabIndex = 2;
             this.startDateTxt.Validating += new System.ComponentModel.CancelEventHandler(this.startDateTxt_Validating);
             // 
             // endDateTxt
             // 
-            this.endDateTxt.Location = new System.Drawing.Point(206, 166);
+            this.endDateTxt.Location = new System.Drawing.Point(248, 325);
+            this.endDateTxt.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.endDateTxt.Name = "endDateTxt";
-            this.endDateTxt.Size = new System.Drawing.Size(221, 23);
+            this.endDateTxt.Size = new System.Drawing.Size(252, 27);
             this.endDateTxt.TabIndex = 3;
             this.endDateTxt.Validating += new System.ComponentModel.CancelEventHandler(this.endDateTxt_Validating_1);
             // 
             // descriptionTxt
             // 
-            this.descriptionTxt.Location = new System.Drawing.Point(206, 210);
+            this.descriptionTxt.Location = new System.Drawing.Point(248, 384);
+            this.descriptionTxt.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.descriptionTxt.Name = "descriptionTxt";
-            this.descriptionTxt.Size = new System.Drawing.Size(357, 23);
+            this.descriptionTxt.Size = new System.Drawing.Size(407, 27);
             this.descriptionTxt.TabIndex = 4;
             this.descriptionTxt.Validating += new System.ComponentModel.CancelEventHandler(this.descriptionTxt_Validating);
             // 
             // commissionTxt
             // 
-            this.commissionTxt.Location = new System.Drawing.Point(206, 290);
+            this.commissionTxt.Location = new System.Drawing.Point(248, 491);
+            this.commissionTxt.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.commissionTxt.Name = "commissionTxt";
-            this.commissionTxt.Size = new System.Drawing.Size(221, 23);
+            this.commissionTxt.Size = new System.Drawing.Size(252, 27);
             this.commissionTxt.TabIndex = 5;
             this.commissionTxt.Validating += new System.ComponentModel.CancelEventHandler(this.commissionTxt_Validating);
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(64, 45);
+            this.label1.Location = new System.Drawing.Point(86, 164);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(21, 15);
+            this.label1.Size = new System.Drawing.Size(27, 20);
             this.label1.TabIndex = 7;
             this.label1.Text = "ID:";
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(64, 87);
+            this.label2.Location = new System.Drawing.Point(86, 220);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(89, 15);
+            this.label2.Size = new System.Drawing.Size(110, 20);
             this.label2.TabIndex = 7;
             this.label2.Text = "Package Name:";
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(64, 130);
+            this.label3.Location = new System.Drawing.Point(86, 277);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(61, 15);
+            this.label3.Size = new System.Drawing.Size(79, 20);
             this.label3.TabIndex = 7;
             this.label3.Text = "Start Date:";
             // 
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(64, 174);
+            this.label4.Location = new System.Drawing.Point(86, 336);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(57, 15);
+            this.label4.Size = new System.Drawing.Size(73, 20);
             this.label4.TabIndex = 7;
             this.label4.Text = "End Date:";
             // 
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(64, 218);
+            this.label5.Location = new System.Drawing.Point(86, 395);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(70, 15);
+            this.label5.Size = new System.Drawing.Size(88, 20);
             this.label5.TabIndex = 7;
             this.label5.Text = "Description:";
             // 
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(64, 290);
+            this.label6.Location = new System.Drawing.Point(86, 491);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(77, 15);
+            this.label6.Size = new System.Drawing.Size(93, 20);
             this.label6.TabIndex = 7;
             this.label6.Text = "Commission:";
             // 
             // saveBtn
             // 
-            this.saveBtn.Location = new System.Drawing.Point(206, 337);
+            this.saveBtn.Location = new System.Drawing.Point(248, 553);
+            this.saveBtn.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.saveBtn.Name = "saveBtn";
-            this.saveBtn.Size = new System.Drawing.Size(75, 23);
+            this.saveBtn.Size = new System.Drawing.Size(86, 31);
             this.saveBtn.TabIndex = 8;
             this.saveBtn.Text = "&Save";
             this.saveBtn.UseVisualStyleBackColor = true;
@@ -161,9 +169,10 @@ namespace WorkShop4
             // 
             // cancelBtn
             // 
-            this.cancelBtn.Location = new System.Drawing.Point(352, 337);
+            this.cancelBtn.Location = new System.Drawing.Point(404, 553);
+            this.cancelBtn.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.cancelBtn.Name = "cancelBtn";
-            this.cancelBtn.Size = new System.Drawing.Size(75, 23);
+            this.cancelBtn.Size = new System.Drawing.Size(86, 31);
             this.cancelBtn.TabIndex = 8;
             this.cancelBtn.Text = "&Cancel";
             this.cancelBtn.UseVisualStyleBackColor = true;
@@ -171,25 +180,38 @@ namespace WorkShop4
             // 
             // packagebasepriceTxt
             // 
-            this.packagebasepriceTxt.Location = new System.Drawing.Point(206, 253);
+            this.packagebasepriceTxt.Location = new System.Drawing.Point(248, 441);
+            this.packagebasepriceTxt.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.packagebasepriceTxt.Name = "packagebasepriceTxt";
-            this.packagebasepriceTxt.Size = new System.Drawing.Size(221, 23);
+            this.packagebasepriceTxt.Size = new System.Drawing.Size(252, 27);
             this.packagebasepriceTxt.TabIndex = 9;
             // 
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(64, 256);
+            this.label7.Location = new System.Drawing.Point(86, 445);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(80, 15);
+            this.label7.Size = new System.Drawing.Size(99, 20);
             this.label7.TabIndex = 10;
             this.label7.Text = "Package Price";
             // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Font = new System.Drawing.Font("Segoe UI", 13.8F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point);
+            this.label8.Location = new System.Drawing.Point(293, 46);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(166, 31);
+            this.label8.TabIndex = 11;
+            this.label8.Text = "Add Packages";
+            // 
             // AddPackagesfrm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(644, 477);
+            this.BackColor = System.Drawing.Color.DarkGray;
+            this.ClientSize = new System.Drawing.Size(736, 636);
+            this.Controls.Add(this.label8);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.packagebasepriceTxt);
             this.Controls.Add(this.cancelBtn);
@@ -206,6 +228,7 @@ namespace WorkShop4
             this.Controls.Add(this.startDateTxt);
             this.Controls.Add(this.nameTxt);
             this.Controls.Add(this.IDtxt);
+            this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.Name = "AddPackagesfrm";
             this.Text = "AddPackagesfrm";
             this.Load += new System.EventHandler(this.AddPackagesfrm_Load);
@@ -232,5 +255,6 @@ namespace WorkShop4
         private System.Windows.Forms.Button cancelBtn;
         private System.Windows.Forms.TextBox packagebasepriceTxt;
         private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.Label label8;
     }
 }
