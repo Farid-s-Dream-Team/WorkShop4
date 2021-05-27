@@ -86,9 +86,21 @@ namespace WorkShop4
 
         private void RemoveBtn_Click(object sender, EventArgs e)
         {
-            context.Packages.Remove(currentPackage);
-            context.SaveChanges();
-            Display();
+            DialogResult button =
+                MessageBox.Show(
+                    "Are you sure that you want to remove the selected record?",
+                    "Remove Item",
+                    MessageBoxButtons.OKCancel,
+                    MessageBoxIcon.Question,
+                    MessageBoxDefaultButton.Button2);
+            if (button == DialogResult.OK)
+            {
+                context.Packages.Remove(currentPackage);
+                context.SaveChanges();
+                Display();
+
+            }
+
         }
 
         private void ExitBtn_Click(object sender, EventArgs e)
