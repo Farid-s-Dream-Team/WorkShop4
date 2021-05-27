@@ -69,7 +69,7 @@ namespace WorkShop4
             this.startDateTxt.Name = "startDateTxt";
             this.startDateTxt.Size = new System.Drawing.Size(221, 23);
             this.startDateTxt.TabIndex = 2;
-            this.startDateTxt.TextChanged += new System.EventHandler(this.startDateTxt_TextChanged);
+            this.startDateTxt.Validating += new System.ComponentModel.CancelEventHandler(this.startDateTxt_Validating);
             // 
             // endDateTxt
             // 

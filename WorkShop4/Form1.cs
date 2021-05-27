@@ -28,10 +28,6 @@ namespace WorkShop4
             Application.Exit();  
         }
 
-        private void instructionLbl_Click(object sender, EventArgs e)
-        {
-
-        }
 
         private void packagesBtn_Click(object sender, EventArgs e)
         {

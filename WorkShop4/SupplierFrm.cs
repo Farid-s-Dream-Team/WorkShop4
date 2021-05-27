@@ -54,9 +54,19 @@ namespace WorkShop4
 
         private void removeSupplierBtn_Click(object sender, EventArgs e)
         {
-            context.Suppliers.Remove(currentSupplier);
-            context.SaveChanges();
-            Display();
+            DialogResult button =
+                MessageBox.Show(
+                    "Are you sure that you want to remove the selected record?",
+                    "Remove Item",
+                    MessageBoxButtons.OKCancel,
+                    MessageBoxIcon.Question,
+                    MessageBoxDefaultButton.Button2);
+            if (button == DialogResult.OK)
+            {
+                context.Suppliers.Remove(currentSupplier);
+                context.SaveChanges();
+                Display();
+            }
         }
 
         private void exitSupplierBtn_Click(object sender, EventArgs e)

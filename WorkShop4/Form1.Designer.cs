@@ -107,7 +107,6 @@ namespace WorkShop4
             this.instructionLbl.Size = new System.Drawing.Size(162, 15);
             this.instructionLbl.TabIndex = 7;
             this.instructionLbl.Text = "Choose A Database to Access";
-            this.instructionLbl.Click += new System.EventHandler(this.instructionLbl_Click);
             // 
             // TravelExperts
             // 
